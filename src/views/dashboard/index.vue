@@ -1,30 +1,36 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+    <iframe :src="map" style="width:100%;height:900px" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 
 export default {
   name: 'Dashboard',
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
+  data() {
+    return {
+      map: '../../../static/1.html'
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped
+>
 .dashboard {
-  &-container {
-    margin: 30px;
-  }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-  }
+  width: 100%;
+  height: 100%;
+  // &-container {
+  //   margin: 30px;
+  // }
+  // &-text {
+  //   font-size: 30px;
+  //   line-height: 46px;
+  // }
+}
+.navbar {
+  background-color: black;
 }
 </style>

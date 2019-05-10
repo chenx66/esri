@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#text1{
+				width:31.25rem;
+				height: 6.25rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>
+				<input />
+				<input type="button" value="查找" />
+				<input />
+				<input type="button" value="替换" />
+				<input type="button" value="显示时间" />
+			</div>
+			<div>
+				<textarea id="text1"></textarea>
+				<input type="button" name="" id="" value="确定" />
+				<div id="text2">
+				</div>
+			</div>
+			<script>
+				window.onload = function() {
+					var ipts = document.getElementsByTagName("input");
+					var p = document.getElementsByTagName("p");
+					ipts[1].onclick = function() {
+						var finder = ipts[0].value;
+						console.log(finder);
+						var str = document.getElementById("text2").innerHTML;
+						console.log(str);
+						var res = str.split(finder).join('<span style="color:red;">' + finder + '</span>');
+						document.getElementById("text2").innerHTML = res;
+					}
+					ipts[3].onclick = function() {
+						var finder = ipts[0].value;
+						console.log(finder);
+						var replace = ipts[2].value;
+						var str = document.getElementById("text2").innerHTML;
+						console.log(str);
+						var res = str.split(finder).join('<span style="color:black;">' + replace + '</span>');
+						document.getElementById("text2").innerHTML = res;
+					}
+					ipts[5].onclick = function() {
+						var txt = document.getElementById("text1").value;
+						text2.innerHTML = txt;
+						console.log(document.getElementById("text2").innerHTML)
+						document.getElementById("text1").value = "";
+					}
+					ipts[4].onclick=function(){
+						var myDate = new Date();
+						myDate.getYear(); //获取当前年份(2位)
+						myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+						myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+						myDate.getDate(); //获取当前日(1-31)
+						myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+						myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数)
+						myDate.getHours(); //获取当前小时数(0-23)
+						myDate.getMinutes(); //获取当前分钟数(0-59)
+						myDate.getSeconds(); //获取当前秒数(0-59)
+						myDate.getMilliseconds(); //获取当前毫秒数(0-999)
+						myDate.toLocaleDateString(); //获取当前日期
+						var mytime=myDate.toLocaleTimeString(); //获取当前时间
+						myDate.toLocaleString( ); //获A取日期与时间
+						alert(myDate);
+						console.log(mytime);
+					}
+				}
+			</script>
+
+		</div>
+	</body>
+</html>
